@@ -42,6 +42,54 @@ I successfully developed an **AI Image Generator** web app using the **Stable Di
 
 ---
 
+✅ Cell Code for Google Colab Image Generator - I Used
+
+
+# 🚀 Install necessary libraries
+!pip install -q gradio diffusers transformers accelerate safetensors
+
+# 🧠 Import libraries
+import gradio as gr
+from diffusers import StableDiffusionPipeline
+import torch
+
+# ⚙️ Check for GPU
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+# 📦 Load Stable Diffusion v1-4 model
+pipe = StableDiffusionPipeline.from_pretrained(
+    "CompVis/stable-diffusion-v1-4"
+).to(device)
+
+# 🎨 Define generation function
+def generate_image(prompt):
+    image = pipe(prompt).images[0]
+    return image
+
+# 🌐 Launch Gradio app with public link
+gr.Interface(
+    fn=generate_image,
+    inputs=gr.Textbox(lines=1, placeholder="Try: A castle floating in the sky surrounded by waterfalls"),
+    outputs="image",
+    title="🎨 AI Image Generator",
+    description="Enter a text prompt and generate a high-quality AI image using Stable Diffusion 1.4"
+).launch(share=True)
+
+
+
+
+
+🧠 How It Works:
+Code Part	Purpose
+!pip install ...	Installs required Python libraries
+from diffusers import ...	Loads the model and image generation pipeline
+device = "cuda" ...	Uses GPU if available (Colab usually provides it)
+pipe(...)	Downloads and loads the Stable Diffusion model
+generate_image()	Defines how to generate the image from prompt
+.launch(share=True)	Starts the Gradio interface with a public link
+
+
+
 ## 🧪 Features
 
 - ✅ Generate high-quality images from text prompts
