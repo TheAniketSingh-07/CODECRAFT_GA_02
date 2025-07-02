@@ -1,6 +1,5 @@
-AI Image Generator
 
-# 🧠 Task 02: Image Generation with Pre-trained Models
+# 🧠  AI Image Generator
 
 > **Internship Role**: Generative AI Intern  
 > **Company**: CodeCraft  
@@ -14,6 +13,7 @@ AI Image Generator
 The goal of this task was to build an **AI-powered image generator** using **pre-trained generative models** such as `DALL·E-mini` or `Stable Diffusion`. The model should accept text prompts and generate corresponding images using a clean user interface.
 
 ---
+[Open In Colab](https://colab.research.google.com/drive/1lChhVmmFiXYykIdIHQoVzoMDfyYh_G_h?usp=sharing)
 
 ## 🚀 Project Summary
 
